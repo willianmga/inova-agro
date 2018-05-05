@@ -17,12 +17,4 @@ export class HomePage {
     this.navController.push(ListaRebanhoPage);
   }
 
-  addIncome() {
-    this.navController.push(AddIncomePage);
-  }
-
-  addOutcome() {
-    this.navController.push(AddOutcomePage);
-  }
-
 }

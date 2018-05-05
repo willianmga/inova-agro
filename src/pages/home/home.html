@@ -12,21 +12,17 @@
   <ion-fab bottom right>
     <button ion-fab color="danger"><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side="top">
-      <button ion-fab (click)="addOutcome()" ><ion-icon name="remove"></ion-icon></button>
-      <button ion-fab (click)="addIncome()" ><ion-icon name="add"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
 
   <ion-card>
-    <ion-card-title text-center>Nome do App</ion-card-title>
+    <ion-card-title text-center>Inova Agro</ion-card-title>
     <ion-card-header text-center>Seja bem vindo, João!</ion-card-header>
     <ion-card-content>
 
       <ion-grid>
         <ion-row>
-          <ion-col width-50 text-center (click)="abrirListaRebanho()">
-            <h1>Rebanhos</h1>
-          </ion-col>
+            <button ion-button color="danger" full (click)="abrirListaRebanho()">Gerenciar Rebanhos</button>
         </ion-row>
       </ion-grid>
 

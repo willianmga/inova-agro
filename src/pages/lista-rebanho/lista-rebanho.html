@@ -6,19 +6,22 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <ion-list>
+  <ion-card  *ngFor="let rebanho of rebanhos">
 
-    <ion-item *ngFor="let rebanho of rebanhos" (click)="abrirDashboardRebanho(rebanho)">
+    <ion-item (click)="abrirDashboardRebanho(rebanho)">
+      <ion-avatar item-start>
+          <img src="{{ rebanho.background }}">
+      </ion-avatar>
       <h2>{{ rebanho.descricao }}</h2>
-      <h2 item-right>Qtde: {{ rebanho.quantidade }}</h2>
+      <p>{{ rebanho.quantidade }} Cabeças de gado</p>
     </ion-item>
 
-  </ion-list>
+  </ion-card>
 
   <ion-fab bottom right>
-    <button ion-fab (click)="addRebanho()" color="secondary"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab (click)="addRebanho()" color="danger"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
 </ion-content>

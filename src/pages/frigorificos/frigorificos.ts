@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FrigorificosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MomentoVendaPage } from '../pages';
 
 @IonicPage()
 @Component({
@@ -15,7 +9,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FrigorificosPage {
 
+
+private venda: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.venda =  Object.assign({}, this.navParams.get('venda123'));
+    console.log(this.venda);
   }
 
   ionViewDidLoad() {
