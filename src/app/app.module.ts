@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
-import { HomePage, IncomesPage, OutcomesPage, LoginPage, SigninPage, MomentoVendaPage, AddIncomePage, AddOutcomePage, ListaRebanhoPage, DashboardRebanhoPage,AdicionarRebanhoPage, FrigorificosPage } from '../pages/pages';
-import { EasyBudgetApi } from '../providers/app-providers';
+import { HomePage, IncomesPage, OutcomesPage, LoginPage, SigninPage, MomentoVendaPage, AddIncomePage, AddOutcomePage, ListaRebanhoPage, DashboardRebanhoPage, AdicionarRebanhoPage, RegistrarPesoPage, FrigorificosPage } from '../pages/pages';
+import { EasyBudgetApi,InovaAgroApi } from '../providers/app-providers';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { EasyBudgetApi } from '../providers/app-providers';
     AddOutcomePage,
     ListaRebanhoPage,
     DashboardRebanhoPage,
+    RegistrarPesoPage,
     AdicionarRebanhoPage,
     MomentoVendaPage,
     FrigorificosPage
@@ -42,6 +43,7 @@ import { EasyBudgetApi } from '../providers/app-providers';
     AddOutcomePage,
     ListaRebanhoPage,
     DashboardRebanhoPage,
+    RegistrarPesoPage,
     AdicionarRebanhoPage,
     MomentoVendaPage,
     FrigorificosPage
@@ -50,7 +52,8 @@ import { EasyBudgetApi } from '../providers/app-providers';
     StatusBar,
     SplashScreen,
     EasyBudgetApi,
+    InovaAgroApi,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule { }
