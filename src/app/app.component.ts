@@ -11,7 +11,7 @@ import { HomePage, IncomesPage, OutcomesPage, LoginPage, ListaRebanhoPage } from
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  appName = "Easy-Budget";
+  appName = "Inova Agro";
   rootPage: any = HomePage;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
