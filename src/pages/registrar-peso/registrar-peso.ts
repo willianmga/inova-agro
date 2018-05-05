@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DashboardRebanhoPage } from '../pages';
+import { InovaAgroApi } from '../../providers/app-providers'
 
 
 
@@ -11,11 +12,18 @@ import { DashboardRebanhoPage } from '../pages';
 })
 export class RegistrarPesoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private rebanho: any;
+  private peso: any; 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service:InovaAgroApi) {
+    this.rebanho = Object.assign({}, this.navParams.get('rebanho')) ;
+    this.peso = {};
   }
 
   salvar() {
-
+    console.log(this.peso);
+    
+    this.service.adicionarPeso(this.rebanho,this.peso);
     this.navCtrl.pop();
   }
 

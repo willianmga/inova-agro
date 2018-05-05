@@ -13,37 +13,39 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list>
+<ion-content>
+  <form (ngSubmit)="salvar()" padding>
     <ion-item>
       <ion-label color="primary" floating>Média de Peso</ion-label>
-      <ion-input></ion-input>
+      <ion-input name="mediaPeso" [(ngModel)]="peso.mediaPeso"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" floating>Custo Médio de Vacinas</ion-label>
-      <ion-input></ion-input>
+      <ion-input name="custoMedioVacinas" [(ngModel)]="peso.custoMedioVacinas"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" floating>Custo Médio de Alimentação</ion-label>
-      <ion-input></ion-input>
+      <ion-input name="custoMedioAlimentacao" [(ngModel)]="peso.custoMedioAlimentacao"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" floating>Custo Médio de Funcionarios</ion-label>
-      <ion-input></ion-input>
+      <ion-input name="CustoMedioFucionarios" [(ngModel)]="peso.CustoMedioFucionarios"></ion-input>
     </ion-item>
-  </ion-list>
 
+    <ion-item>
+      <ion-label color="primary" floating>Data Alteração</ion-label>
+      <ion-input name="dataAlteracao" [(ngModel)]="peso.dataAlteracao"></ion-input>
+    </ion-item>
 
+    <ion-fab bottom right>
+      <button ion-button color="secondary" (click)="salvar()" type="submit">Salvar</button>
+    </ion-fab>
 
-
-  <ion-fab bottom right>
-    <button ion-button color="secondary" (click)="salvar()">Salvar</button>
-  </ion-fab>
-
-  <ion-fab bottom center>
-    <button ion-button color="danger" (click)="cancelarRegistroPeso()">Cancelar</button>
-  </ion-fab>
+    <ion-fab bottom center>
+      <button ion-button color="danger" (click)="cancelarRegistroPeso()">Cancelar</button>
+    </ion-fab>
+  </form>
 </ion-content>
