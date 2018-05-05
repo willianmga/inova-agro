@@ -18,11 +18,12 @@ export class AdicionarRebanhoPage {
     console.log('ionViewDidLoad AdicionarRebanhoPage');
   }
 
-  abrirListaRebanho(){
-    this.navCtrl.push(ListaRebanhoPage);
+  voltar(){
+    this.navCtrl.pop();
   }
 
   salvar() {
     console.log(this.rebanho);
+   
   }
 }
