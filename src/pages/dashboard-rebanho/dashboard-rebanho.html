@@ -9,7 +9,7 @@
 <ion-content>
 
   <ion-card>
-    <img src="{{ rebanho.background }}"/>
+    <img src="{{ rebanho.background }}" />
     <ion-card-content>
       <ion-card-title>
         {{ rebanho.descricao }}
@@ -26,7 +26,7 @@
       </ion-card-title>
       <p>Quantidade: {{ rebanho.quantidade }} Cabeças</p>
       <p>Idade: {{ rebanho.idade }} meses</p>
-      <p>Peso médio atual: {{ rebanho.pesoMedio }} Arrobas ({{rebanho.porcentagemPronto}}  % pronto)</p>
+      <p>Peso médio atual: {{ rebanho.pesoMedio }} Arrobas ({{rebanho.porcentagemPronto}} % pronto)</p>
       <p>Média de engorda mensal: {{ rebanho.pesoMedio }} Arrobas</p>
       <button ion-button full (click)="registrarPeso()">Registrar peso</button>
     </ion-card-content>
@@ -50,11 +50,4 @@
       <p>Você gastou até o momento R$ {{ rebanho.gastoTotal }}</p>
     </ion-card-content>
   </ion-card>
-
-    <ion-list>
-
-        <button ion-button color="secondary" (click)="abrirRegistrarPeso(rebanho)">Registrar Peso</button>
-      </ion-list>
-    
-
 </ion-content>

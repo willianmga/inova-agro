@@ -16,8 +16,12 @@ export class DashboardRebanhoPage {
     this.rebanho = Object.assign({}, this.navParams.get('rebanho'));
   }
 
-  abrirRegistrarPeso(rebanho) {
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad DashboardRebanhoPage');
+  }
+
+  registrarPeso(rebanho) {
     const params = {
       rebanho: rebanho
     };
@@ -25,14 +29,6 @@ export class DashboardRebanhoPage {
     this.navCtrl.push(RegistrarPesoPage, params);
   }
 
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DashboardRebanhoPage');
-  }
-
-  registrarPeso() {
-
-  }
 
   verMomentoVenda() {
     this.navCtrl.push(MomentoVendaPage);
