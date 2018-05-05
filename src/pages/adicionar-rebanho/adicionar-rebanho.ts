@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ListaRebanhoPage} from '../pages';
+import { ListaRebanhoPage } from '../pages';
+import { InovaAgroApi } from '../../providers/app-providers'
 
 @IonicPage()
 @Component({
@@ -8,10 +9,13 @@ import { ListaRebanhoPage} from '../pages';
   templateUrl: 'adicionar-rebanho.html',
 })
 export class AdicionarRebanhoPage {
-
+ 
   rebanho = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public service : InovaAgroApi ) {
+                
   }
 
   ionViewDidLoad() {
@@ -24,6 +28,6 @@ export class AdicionarRebanhoPage {
 
   salvar() {
     console.log(this.rebanho);
-   
+    this.service.adicionarRebanho(this.rebanho);
   }
 }
