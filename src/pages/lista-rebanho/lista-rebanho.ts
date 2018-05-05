@@ -7,6 +7,8 @@ import { DashboardRebanhoPage } from '../pages';
   selector: 'page-lista-rebanho',
   templateUrl: 'lista-rebanho.html',
 })
+
+
 export class ListaRebanhoPage {
 
   rebanhos = [
@@ -29,15 +31,15 @@ export class ListaRebanhoPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) { 
   }
 
   abrirDashboardRebanho(rebanho) {
-
     const params = {
       rebanho: rebanho
     };
+
+    
 
     this.navCtrl.push(DashboardRebanhoPage, params);
   }
