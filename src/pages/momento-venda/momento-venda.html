@@ -1,18 +1,30 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>Momento da Venda</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   
-  <ion-list>
-    <ion-item *ngFor="let venda of vendas" (click)="abrirFrigorificos(venda)">
-      <h2>{{ venda.mes }}</h2>
-      <h2 item-right>Preco: R$ {{ venda.preco }}</h2>
-    </ion-item>
-  </ion-list>
+  <ion-card *ngFor="let venda of vendas" (click)="selectVenda(venda)">
+      <ion-card-content>
+          <ion-card-title color="primary">
+            {{ venda.mes }}
+          </ion-card-title>
+          <ion-list *ngIf="venda.selected" >
+            <ion-item *ngFor="let frigo of venda.frigorifico">
+              <h2>{{ frigo.nome }}</h2>
+              <p>
+                <ion-badge item-end>R$ {{ frigo.valorPorArroba }}</ion-badge>
+                <ion-badge item-end color="danger">{{ frigo.formaPagamento }}</ion-badge>
+                <ion-badge item-end color="secondary">R$ {{ frigo.lucroTotal }}</ion-badge>
+              </p>
+              <button ion-button full (click)="selecionarVenda(venda, frigo)">Selecionar Venda</button>
+            </ion-item>
+          </ion-list>
+  </ion-card-content>
+</ion-card>
 
 </ion-content>

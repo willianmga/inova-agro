@@ -15,8 +15,17 @@ export class InovaAgroApi {
   raca: 'Nelore',
   custoPorCabeca: 800,
   pesoMedio: 10,
+  mediaEngordaMensal: 1,
   porcentagemPronto: 65,
   gastoTotal: 950,
+  momentoVendaSelecionado: false,
+  mesVendaSelecionado: '',
+  frigorifico: {
+    nome: '',
+    valorPorArroba: 0,
+    formaPagamento: '',
+    lucroTotal: 0
+  },
   pesos: [
     {
       mediaPeso: 8,
@@ -36,8 +45,17 @@ export class InovaAgroApi {
   raca: 'Wagyu',
   custoPorCabeca: 750,
   pesoMedio:'',
+  mediaEngordaMensal: 1,
   porcetagemPronto: '',
   gastoTotal:'',
+  momentoVendaSelecionado: false,
+  mesVendaSelecionado: '',
+  frigorifico: {
+    nome: '',
+    valorPorArroba: 0,
+    formaPagamento: '',
+    lucroTotal: 0
+  },
   pesos: [
     {
       mediaPeso: 8,
@@ -52,7 +70,7 @@ export class InovaAgroApi {
 ];
 
  adicionarRebanho(rebanho){
-   rebanho.push(rebanho);
+   this.rebanho.push(rebanho);
  }
 
  trazerTodosRebanhos(){
@@ -61,9 +79,7 @@ export class InovaAgroApi {
 
  adicionarPeso(rebanho,peso){
   rebanho.gastoTotal = this.calcularGastoTotal(rebanho,peso);
-  rebanho.pesos.push(peso);
-
-  console.log(rebanho.pesos);
+  //rebanho.pesos.push(peso);
 
  }
 
@@ -75,5 +91,12 @@ export class InovaAgroApi {
     this.gastoTotal = rebanho.gastoTotal + (pesos.custoMedioAlimentacao + pesos.custoMedioFuncionarios + pesos.custoMedioVacinas + pesos.custoPorCabeca);
     return rebanho.gastoTotal = this.gastoTotal;
  }
+
+ selecionarVenda(rebanho, venda, frigo) {
+
+  rebanho.momentoVendaSelecionado = true;
+  rebanho.mesVendaSelecionado = venda.mes;
+  rebanho.frigorifico = frigo;
+}
   
 }

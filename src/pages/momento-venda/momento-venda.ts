@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FrigorificosPage } from '../pages'
+import { InovaAgroApi } from '../../providers/app-providers';
 
 @IonicPage()
 @Component({
@@ -9,34 +9,37 @@ import { FrigorificosPage } from '../pages'
 })
 export class MomentoVendaPage {
 
-  vendas = [{
+  vendas = [
+    {
     mes: 'Maio 2018',
-    preco: 145,
-    raca: "Nelore",
+    selected: false,
     frigorifico: [{
-      nome: "Frangorífico",
+      nome: 'JBS Maringá',
       valorPorArroba: 130,
-      formaPagamento: 'em 30 dias'
+      formaPagamento: 'em 30 dias',
+      lucroTotal: 125000
     },
     {
-      nome: "Seronrífico",
+      nome: 'Seronrífico',
       valorPorArroba: 135,
-      formaPagamento: 'em 30 dias'
+      formaPagamento: 'em 30 dias',
+      lucroTotal: 155000
     },
     {
-      nome: "Finorífico",
+      nome: 'Finorífico',
       valorPorArroba: 145,
-      formaPagamento: 'em 60 dias'
+      formaPagamento: 'em 60 dias',
+      lucroTotal: 111000
     }]
     },
   {
     mes: 'Junho 2018',
-    preco: 135,
-    raca: "Wagyu",
+    selected: false,
     frigorifico: [{
       nome: 'Willianrífico',
       valorPorArroba: 135,
-      formaPagamento: 'em 60 dias'
+      formaPagamento: 'em 60 dias',
+      lucroTotal: 123020
     },
     {
       nome: 'Leandrorífico',
@@ -44,29 +47,31 @@ export class MomentoVendaPage {
       formaPagamento: 'em 30 dias'
   }]
   },
-  
     {
       mes: 'Julho 2018',
-      preco: 132,
-      raca: "Raça Qualquer",
+      selected: false,
       frigorifico: [{
         nome: 'Frigorífico Qualquer',
         valorPorArroba: 132,
-        formaPagamento: 'em 30 dias'
+        formaPagamento: 'em 30 dias',
+        lucroTotal: 125000
       }]
   }];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private rebanho: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public service : InovaAgroApi) {
+    //this.rebanho = Object.assign({}, this.navParams.get('rebanho'));
+    this.rebanho = this.navParams.get('rebanho');
   }
-    
-  abrirFrigorificos(venda) {
-    
-    const params = {
-      venda123: venda
-    }
 
-    this.navCtrl.push(FrigorificosPage, params);
+  selectVenda(venda) {
+    venda.selected = !venda.selected;
+  }
+
+  selecionarVenda(venda, frigo) {
+    this.service.selecionarVenda(this.rebanho, venda, frigo);
+    this.navCtrl.pop();
   }
 
   ionViewDidLoad() {

@@ -15,9 +15,9 @@ export class DashboardRebanhoPage {
   private total: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public service : InovaAgroApi) {
-    this.rebanho = Object.assign({}, this.navParams.get('rebanho'));
+    //this.rebanho = Object.assign({}, this.navParams.get('rebanho'));
+    this.rebanho = this.navParams.get('rebanho');
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardRebanhoPage');
@@ -32,9 +32,13 @@ export class DashboardRebanhoPage {
     this.total = this.service.total();
   }
 
-
   verMomentoVenda() {
-    this.navCtrl.push(MomentoVendaPage);
+
+    const params = {
+      rebanho: this.rebanho
+    };
+
+    this.navCtrl.push(MomentoVendaPage, params);
   }
 
 }

@@ -24,10 +24,27 @@
       <ion-card-title>
         Crescimento do Rebanho
       </ion-card-title>
-      <p>Quantidade: {{ rebanho.quantidade }} Cabeças</p>
-      <p>Idade: {{ rebanho.idade }} meses</p>
-      <p>Peso médio atual: {{ rebanho.pesoMedio }} Arrobas ({{rebanho.porcentagemPronto}} % pronto)</p>
-      <p>Média de engorda mensal: {{ rebanho.pesoMedio }} Arrobas</p>
+      <ion-item>
+        <ion-label item-start>Quantidade:</ion-label> 
+        <ion-label item-end>{{ rebanho.quantidade }} Cabeças</ion-label>
+      </ion-item>
+
+      <ion-item>
+          <ion-label item-start>Idade:</ion-label> 
+          <ion-label item-end>{{ rebanho.idade }} meses</ion-label>
+      </ion-item>  
+      <ion-item>
+          <ion-label item-start>Peso médio atual:</ion-label> 
+          <ion-label item-end>{{ rebanho.pesoMedio }} Arrobas</ion-label>
+      </ion-item> 
+      <ion-item>
+          <ion-label item-start>% Completude:</ion-label> 
+          <ion-label item-end>{{rebanho.porcentagemPronto}} % pronto</ion-label>
+      </ion-item> 
+      <ion-item>
+          <ion-label item-start>Engorda mensal:</ion-label> 
+          <ion-label item-end>{{ rebanho.mediaEngordaMensal }} Arrobas</ion-label>
+      </ion-item>  
       <button ion-button full (click)="registrarPeso()">Registrar peso</button>
     </ion-card-content>
   </ion-card>
@@ -37,7 +54,33 @@
       <ion-card-title>
         Momento da Venda
       </ion-card-title>
-      <p>Você ainda não decidiu o momento da venda deste rebanho</p>
+      <ion-list *ngIf="!rebanho.momentoVendaSelecionado">
+          <ion-item>
+              <ion-label>Momento da venda não escolhido</ion-label>
+          </ion-item>        
+      </ion-list>
+      <ion-list *ngIf="rebanho.momentoVendaSelecionado">
+        <ion-item>
+            <ion-label item-start>Venda estimado</ion-label>
+            <ion-badge item-end>{{ rebanho.mesVendaSelecionado }}</ion-badge>
+        </ion-item>        
+        <ion-item>
+           <ion-label item-start>Valor:</ion-label>
+           <ion-badge item-end>R$ {{ rebanho.frigorifico.valorPorArroba }}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label item-start>Pagamento:</ion-label>
+          <ion-badge item-end color="danger">{{ rebanho.frigorifico.formaPagamento }}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label item-start>Lucro Total:</ion-label>
+          <ion-badge item-end color="secondary">R$ {{ rebanho.frigorifico.lucroTotal }}</ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-label item-start>Engorda Mensal:</ion-label>
+            <ion-badge item-end color="secondary">0,8 arrobas</ion-badge>
+          </ion-item>        
+      </ion-list>
       <button ion-button color="danger" full (click)="verMomentoVenda()">Ver opções de venda</button>
     </ion-card-content>
   </ion-card>
