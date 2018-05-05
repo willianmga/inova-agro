@@ -44,13 +44,12 @@
       </ion-item>
     
       <ion-fab bottom right>
-          <button ion-button  type="submit" color="secondary">Salvar</button>
+          <button ion-button  (click)="voltar()" type="submit" color="secondary">Salvar</button>
       </ion-fab>
 
       <ion-fab bottom center>
-          <button ion-button (click)="abrirListaRebanho()" color="danger">Cancelar</button>
+          <button ion-button (click)="voltar()" color="danger">Cancelar</button>
       </ion-fab>
-
       
   </form>
 </ion-content>
