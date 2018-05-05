@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DashboardRebanhoPage } from '../pages';
+import { DashboardRebanhoPage, AdicionarRebanhoPage } from '../pages';
+
 
 @IonicPage()
 @Component({
@@ -40,6 +41,11 @@ export class ListaRebanhoPage {
     };
 
     this.navCtrl.push(DashboardRebanhoPage, params);
+  }
+
+
+  addRebanho(){
+    this.navCtrl.push(AdicionarRebanhoPage);
   }
 
   ionViewDidLoad() {
