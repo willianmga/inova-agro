@@ -14,11 +14,7 @@ export class DashboardRebanhoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.rebanho = Object.assign({}, this.navParams.get('rebanho'));
   }
-
-  abrirMomentoVenda(){
-    this.navCtrl.push(MomentoVendaPage);
-  }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardRebanhoPage');
   }
@@ -28,7 +24,7 @@ export class DashboardRebanhoPage {
   }
 
   verMomentoVenda() {
-
+    this.navCtrl.push(MomentoVendaPage);
   }
 
 }
