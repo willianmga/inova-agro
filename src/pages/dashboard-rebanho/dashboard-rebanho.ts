@@ -23,4 +23,12 @@ export class DashboardRebanhoPage {
     console.log('ionViewDidLoad DashboardRebanhoPage');
   }
 
+  registrarPeso() {
+
+  }
+
+  verMomentoVenda() {
+
+  }
+
 }
