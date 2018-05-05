@@ -5,3 +5,5 @@ export * from './login/login';
 export * from './signin/signin';
 export * from './add-income/add-income';
 export * from './add-outcome/add-outcome';
+export * from './lista-rebanho/lista-rebanho';
+export * from './dashboard-rebanho/dashboard-rebanho';

@@ -18,19 +18,14 @@
   </ion-fab>
 
   <ion-card>
-    <ion-card-title text-center>{{ summary.month.name }}</ion-card-title>
-    <ion-card-header text-center>Saldo: {{ summary.totalBalance }}</ion-card-header>
+    <ion-card-title text-center>Nome do Aplicativo</ion-card-title>
+    <ion-card-header text-center>Seja bem vindo João</ion-card-header>
     <ion-card-content>
 
       <ion-grid>
         <ion-row>
-          <ion-col width-50 text-center (click)="openIncomes()">
-            <h1>{{ summary.totalIncomes }}</h1>
-            <h4>Receitas do mês</h4>
-          </ion-col>
-          <ion-col width-50 text-center (click)="openOutcomes()">
-            <h1>{{ summary.totalOutcomes }}</h1>
-            <h4>Despesas do mês</h4>
+          <ion-col width-50 text-center (click)="abrirListaRebanho()">
+            <h1>Rebanhos</h1>
           </ion-col>
         </ion-row>
       </ion-grid>
