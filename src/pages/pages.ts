@@ -8,3 +8,6 @@ export * from './add-outcome/add-outcome';
 export * from './lista-rebanho/lista-rebanho';
 export * from './dashboard-rebanho/dashboard-rebanho';
 export * from './adicionar-rebanho/adicionar-rebanho';
+export * from './momento-venda/momento-venda'
+export * from './frigorificos/frigorificos'
+
