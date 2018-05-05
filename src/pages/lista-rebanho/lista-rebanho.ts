@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DashboardRebanhoPage } from '../pages';
 
-/**
- * Generated class for the ListaRebanhoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-lista-rebanho',
@@ -41,7 +34,12 @@ export class ListaRebanhoPage {
   }
 
   abrirDashboardRebanho(rebanho) {
-    this.navCtrl.push(DashboardRebanhoPage, rebanho);
+
+    const params = {
+      rebanho: rebanho
+    };
+
+    this.navCtrl.push(DashboardRebanhoPage, params);
   }
 
   ionViewDidLoad() {

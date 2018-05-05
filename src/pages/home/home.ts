@@ -18,11 +18,11 @@ export class HomePage {
   }
 
   addIncome() {
-    //this.navController.push(AddIncomePage);
+    this.navController.push(AddIncomePage);
   }
 
   addOutcome() {
-    //this.navController.push(AddOutcomePage);
+    this.navController.push(AddOutcomePage);
   }
 
 }
