@@ -7,3 +7,4 @@ export * from './add-income/add-income';
 export * from './add-outcome/add-outcome';
 export * from './lista-rebanho/lista-rebanho';
 export * from './dashboard-rebanho/dashboard-rebanho';
+export * from './registrar-peso/registrar-peso';

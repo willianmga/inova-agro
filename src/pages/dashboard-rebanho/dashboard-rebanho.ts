@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RegistrarPesoPage } from '../pages';
 
 @IonicPage()
 @Component({
@@ -12,6 +13,15 @@ export class DashboardRebanhoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.rebanho = Object.assign({}, this.navParams.get('rebanho'));
+  }
+
+  abrirRegistrarPeso(rebanho) {
+
+    const params = {
+      rebanho: rebanho
+    };
+
+    this.navCtrl.push(RegistrarPesoPage, params);
   }
 
   ionViewDidLoad() {

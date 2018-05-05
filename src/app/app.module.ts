@@ -9,6 +9,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
 import { HomePage, IncomesPage, OutcomesPage, LoginPage, SigninPage, AddIncomePage, AddOutcomePage, ListaRebanhoPage, DashboardRebanhoPage } from '../pages/pages';
 import { EasyBudgetApi } from '../providers/app-providers';
+import { RegistrarPesoPage } from '../pages/registrar-peso/registrar-peso';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EasyBudgetApi } from '../providers/app-providers';
     AddIncomePage,
     AddOutcomePage,
     ListaRebanhoPage,
-    DashboardRebanhoPage
+    DashboardRebanhoPage,
+    RegistrarPesoPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { EasyBudgetApi } from '../providers/app-providers';
     AddIncomePage,
     AddOutcomePage,
     ListaRebanhoPage,
-    DashboardRebanhoPage
+    DashboardRebanhoPage,
+    RegistrarPesoPage
   ],
   providers: [
     StatusBar,
