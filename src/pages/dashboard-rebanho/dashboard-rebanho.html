@@ -1,12 +1,55 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>{{ rebanho.descricao }}</ion-title>
+    <ion-title>Detalhes do Rebanho</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <ion-card>
+    <img src="{{ rebanho.background }}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ rebanho.descricao }}
+      </ion-card-title>
+
+      <p>{{ rebanho.tipo }} - {{ rebanho.raca }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        Crescimento do Rebanho
+      </ion-card-title>
+      <p>Quantidade: {{ rebanho.quantidade }} Cabeças</p>
+      <p>Idade: {{ rebanho.idade }} meses</p>
+      <p>Peso médio atual: {{ rebanho.pesoMedio }} Arrobas ({{rebanho.porcentagemPronto}}  % pronto)</p>
+      <p>Média de engorda mensal: {{ rebanho.pesoMedio }} Arrobas</p>
+      <button ion-button full (click)="registrarPeso()">Registrar peso</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        Momento da Venda
+      </ion-card-title>
+      <p>Você ainda não decidiu o momento da venda deste rebanho</p>
+      <button ion-button color="danger" full (click)="verMomentoVenda()">Ver opções de venda</button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        Custos
+      </ion-card-title>
+      <p>Você gastou até o momento R$ {{ rebanho.gastoTotal }}</p>
+    </ion-card-content>
+  </ion-card>
 
     <ion-list>
 

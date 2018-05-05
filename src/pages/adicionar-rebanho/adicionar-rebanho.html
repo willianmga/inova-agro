@@ -1,0 +1,56 @@
+<!--
+  Generated template for the AdicionarRebanhoPage page.
+  
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>Cadastrar Rebanho</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+<ion-content>
+  <form (ngSubmit)="salvar()" padding>
+      <ion-item>
+        <ion-label color="primary" floating>Descricão</ion-label>
+        <ion-input name="descricao" [(ngModel)]="rebanho.descricao"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary" floating>Quantidade</ion-label>
+        <ion-input name="quantidade" [(ngModel)]="rebanho.quantidade" ></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary" floating>Tipo(Boi/Vaca)</ion-label>
+        <ion-input name="tipo" [(ngModel)]="rebanho.tipo"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary" floating>Raca</ion-label>
+        <ion-input name="raca" [(ngModel)]="rebanho.raca"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary" floating>Idade</ion-label>
+        <ion-input name="idade"[(ngModel)]="rebanho.idade"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary" floating>Custo por Cabeca</ion-label>
+        <ion-input name="custo" [(ngModel)]="rebanho.custo"></ion-input>
+      </ion-item>
+    
+      <ion-fab bottom right>
+          <button ion-button  type="submit" color="secondary">Salvar</button>
+      </ion-fab>
+
+      <ion-fab bottom center>
+          <button ion-button (click)="abrirListaRebanho()" color="danger">Cancelar</button>
+      </ion-fab>
+
+      
+  </form>
+</ion-content>

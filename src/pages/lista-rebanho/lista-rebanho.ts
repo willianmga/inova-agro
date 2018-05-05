@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DashboardRebanhoPage } from '../pages';
+import { DashboardRebanhoPage, AdicionarRebanhoPage } from '../pages';
+
 
 @IonicPage()
 @Component({
   selector: 'page-lista-rebanho',
   templateUrl: 'lista-rebanho.html',
 })
+
+
 export class ListaRebanhoPage {
 
   rebanhos = [
@@ -16,8 +19,11 @@ export class ListaRebanhoPage {
       idade: 8,
       tipo: 'Boi',
       raca: 'Nelore',
-      custoPorCabeca: 800
-
+      custoPorCabeca: 800,
+      pesoMedio: 10,
+      porcentagemPronto: 65,
+      gastoTotal: 950,
+      background: 'https://i1.wp.com/cdn.comprerural.com/wp-content/uploads/2017/08/23100548/vacas-nelore-correndo.jpg?resize=640%2C346&ssl=1'
     },
     {
       descricao: 'Rebanho de Wagyu',
@@ -29,17 +35,22 @@ export class ListaRebanhoPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) { 
   }
 
   abrirDashboardRebanho(rebanho) {
-
     const params = {
       rebanho: rebanho
     };
 
+    
+
     this.navCtrl.push(DashboardRebanhoPage, params);
+  }
+
+
+  addRebanho(){
+    this.navCtrl.push(AdicionarRebanhoPage);
   }
 
   ionViewDidLoad() {

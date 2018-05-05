@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegistrarPesoPage } from '../pages';
+import { MomentoVendaPage } from '../pages';
 
 @IonicPage()
 @Component({
@@ -24,8 +25,17 @@ export class DashboardRebanhoPage {
     this.navCtrl.push(RegistrarPesoPage, params);
   }
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DashboardRebanhoPage');
+  }
+
+  registrarPeso() {
+
+  }
+
+  verMomentoVenda() {
+    this.navCtrl.push(MomentoVendaPage);
   }
 
 }
